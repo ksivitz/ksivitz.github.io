@@ -2,7 +2,7 @@
 
 ### Project description:
 
-The purpose of this project is to determine if reddit sentiment of a stock can be used to predict whether the closing price of that stock will be higher or lower than the closing price of the previous day. There are many different subreddits dedicated to the stock market, each with different trading styles and philosophies. The goal is to visit a variety of these subreddits, collect comments that mention the apple ticker (APPL), and see if the combined sentiment of these comments is correlated to the next day’s closing price. 
+The purpose of this project is to determine if a patient has one of 3 age related conditions based on 50 anonymized data points. 
 
 ### 1. The Data
 
