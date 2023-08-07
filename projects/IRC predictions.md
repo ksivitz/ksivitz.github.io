@@ -1,4 +1,4 @@
-## Reddit Sentiment VS Apple Closing Price
+## ICR - Identifying Age Related Conditions
 
 ### Project description:
 
