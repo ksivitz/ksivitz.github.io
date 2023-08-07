@@ -50,4 +50,4 @@ In conclusion, although reddit sentiment does have a slightly better than 50% pr
 
 Below is the notebook containing the full workup of this project
 
-[Reddit Sentiment vs Apple Price Notebook](https://ksivitz.github.io/notebooks/sent.html)
+[Reddit Sentiment vs Apple Price Notebook](https://ksivitz.github.io/notebooks/ICR-XGBoost-Notebook.html)
