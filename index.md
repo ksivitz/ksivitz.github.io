@@ -7,7 +7,7 @@
 [<img src="images/guitar_piano_cropped.jpg?raw=true"/>](projects/music)
 
 ---
-[<center>Reddit Sentiment vs Apple Stock Price</center>](projects/reddit_sentiment)
+[<center>ICR - Identifying Age Related Conditions</center>](projects/icr-predictions)
 <br>
 [<img src="images/stock_better_cropped.jpg?raw=true"/>](projects/reddit_sentiment)
 
