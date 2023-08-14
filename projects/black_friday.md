@@ -1,8 +1,8 @@
-## Black Friday 
+## Predicting Sales With Time Series Forcasting  
 
 ### Project description:
 
-The purpose of this project is to analyze customer data from Black Friday purchases and attempt to understand purchasing behavior, then create a prediction model to capitalize on this behavior through personalized promotions. We will first analyze the given data to see what kind of correlation the different features have with each other and determine what model would best be able to predict these purchasing habits.   
+The purpose of this project is to analyze store sales data from 54 stores across the country of Equador, and create a prediction model to predict future sales predictions of the predicted values. predict.  
 
 ### 1. The Data
 
