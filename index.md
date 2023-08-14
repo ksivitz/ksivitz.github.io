@@ -7,14 +7,15 @@
 [<img src="images/guitar_piano_cropped.jpg?raw=true"/>](projects/music)
 
 ---
+[<center>Multi-Store Sales Forecasting </center>](projects/black_friday)
+<br>
+[<img src="images/black_friday_cropped.jpg?raw=true"/>](projects/black_friday)
+
+---
 [<center>ICR - Identifying Age Related Conditions</center>](projects/icr-predictions)
 <br>
 [<img src="images/stock_better_cropped.jpg?raw=true"/>](projects/reddit_sentiment)
 
----
-[<center>Black Friday Sales Predictions</center>](projects/black_friday)
-<br>
-[<img src="images/black_friday_cropped.jpg?raw=true"/>](projects/black_friday)
 
 
 
