@@ -10,15 +10,17 @@ For this project I will be using a dataset provided by Kaggle, an online coding 
 
 The first step in preparing this data looking for missing values. As we can see from the following chart, there are a few categories with one or two missing values, and one category (EL) with 60 missing values. because we have no knoweldge of what each category represents, I decided the best way to fill these missing values is with a KNN imputer. This program fills missing values with the value of their nearest neighbor in terms of all other categories. 
 
-<img src=filled values something>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/error_rate.png?raw=true"/>
 
 Now that we have computed our missing values, we can explore our data. The first step is to view the distribution of our data categories. Below are a few histograms of some randomly selected categories. As you can see from these plots, the data is fairly normally distributed, with outliers tending to be rightly skewed. This suggests standardization will be the best method for scaling our data when preparing it for our model. 
 
-<img src=histogram plots>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/dl_hist.png?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/ee_hist.png?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/cr_hist.png?raw=true"/>
 
 Next we will look at feature correlation. I have taken our data and seperated it into 3 randomly selected groups of 10. With these subsets we can create some heatmaps that show how correlated our categories are to each other. As you can see from these plots, there is a fair amount of correlation, with some categories reaching the 70%-80% level. As for correlation to our target category, we have low but non-null correlation on some categories and up to 25% on others, suggesting a model should do fairly well at predicting our target class. 
 
-<img src=heatmaps>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/heatmaps.png?raw=true"/>
 
 ### 2. Model Training and Evaluation
 
@@ -30,16 +32,28 @@ The first step is choosing hyperparameters for our model. I started by using sag
 
 Using area under the curve (AUC) as our training metric, we can see that our model performs fairly well, with 99% on our training data and 93% on test data. From the confusion matrix we can see our model performed very well, only miss-classifying 2 of the 23 positive instances. 
 
-img src - auc graph from report
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/auc-curve-test.png?raw=true"/>
 
-img src - confusion matrix from report
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/confusion-test.png?raw=true"/>
 
 Finally, we will evaluate our model on the holdout (validation) set. As you can see there is a slight dropoff in performance, though our model still has an accruacy score of 88% and an AUC of 86%. From the confusion matrix we can see that we were able to correctly identify 82% (19 out of 23) positive instances.
+
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/auc-5.png?raw=true"/>
+
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/confusion-5.png?raw=true"/>
+
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/class-5.png?raw=true"/>
 
 Because the purpose of this project is to correctly identify positive instances of age related conditions in patients, our most important metric is the recall value for our 
 positive (1) class. XGBoost provides probabilities as its output, with values less that 0.50 resulting in a 0 classification and outcomes greater than 0.50 resulting in a 1 classification. By adjusting this threshold from 0.50 to 0.40, we can increase our likelyhood of identifing patients with a positive result from our test. 
 
-img src adjusted confusion matrix
+
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/auc-4.png?raw=true"/>
+
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/confusion-4.png?raw=true"/>
+
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/class-report-4.png?raw=true"/>
+
 
 As you can see, lowering this threshold allowed us to increase our percentage of correctly identified positive instances from 82% to 86%.
 
