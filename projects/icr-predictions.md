@@ -26,14 +26,26 @@ Now that the data has been organized and collected, it is time to train our mode
 
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/error_rate.png?raw=true"/>
 
-Using area under the curve (AUC) as our training metric, we can see that our model performs fairly well, with 99% on our training data and 93% on test data. 
+The first step is choosing hyperparameters for our model. I started by using sagemakers hyperparameter tuning to create a hyperparameter tuning job. The results gave us a model that performed very well, however it appeard to overfit to our training data. Because of this, I adjusted some of the hyperparameters to help reduce this overfitting. I increased the values of lambda and alpha (our regularization hyperparameters), and decressed the max depth of our trees from 20 to 10.
+
+Using area under the curve (AUC) as our training metric, we can see that our model performs fairly well, with 99% on our training data and 93% on test data. From the confusion matrix we can see our model performed very well, only miss-classifying 2 of the 23 positive instances. 
+
+img src - auc graph from report
+
+img src - confusion matrix from report
+
+Finally, we will evaluate our model on the holdout (validation) set. As you can see there is a slight dropoff in performance, though our model still has an accruacy score of 88% and an AUC of 86%. From the confusion matrix we can see that we were able to correctly identify 82% (19 out of 23) positive instances.
+
+Because the purpose of this project is to correctly identify positive instances of age related conditions in patients, our most important metric is the recall value for our 
+positive (1) class. XGBoost provides probabilities as its output, with values less that 0.50 resulting in a 0 classification and outcomes greater than 0.50 resulting in a 1 classification. By adjusting this threshold from 0.50 to 0.40, we can increase our likelyhood of identifing patients with a positive result from our test. 
+
+img src adjusted confusion matrix
+
+As you can see, lowering this threshold allowed us to increase our percentage of correctly identified positive instances from 82% to 86%.
 
 
 
-
-
-
-In conclusion, although reddit sentiment does have a slightly better than 50% prediction rate on the movement of APPLE stock, it may be best to look for a different source for stock market trading advice. 
+In conclusion, modeling can help identify patients who have one of these age related conditions and provide recommendations for further screening. 
 
 Below is the notebook containing the full workup of this project
 
