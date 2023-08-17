@@ -2,49 +2,36 @@
 
 ### Project description:
 
-The purpose of this project is to determine if a patient has one of 3 age related conditions based on 50 anonymized data points. 
+The purpose of this project is to determine if a patient has one or more of three age-related conditions based on 50 anonymized data points. 
 
 ### 1. The Data
 
-For this project I will be using a dataset collected by SocialGrep containing comments with mentions of APPL from 10/31/2016 - 10/31/2021. Each row in this dataset contains a UTC Timestamp, the comment text, the subreddit the comment came from, and various other defining features. Our main focus from this dataset will be the timestamp and the comment text. 
+For this project I will be using a dataset provided by Kaggle, an online coding competition website. Because the data is medical and contains personal information, all data is encoded and anonymized. For this reason all of our data exploration and feature engineering will be based solely on the numbers, and not involve any domain knowlege. 
 
-The first step in preparing this data is to create a sentiment score for each comment. Once each comment was tokenized and lemmatized, I used SIA to create a polarity score for each word and combined these scores to receive a final sentiment score for each comment. Once the scores were tallied, I grouped the dataset by date and then combined the scores to create total sentiment for each trading day. 
+The first step in preparing this data looking for missing values. As we can see from the following chart, there are a few categories with one or two missing values, and one category (EL) with 60 missing values. because we have no knoweldge of what each category represents, I decided the best way to fill these missing values is with a KNN imputer. This program fills missing values with the value of their nearest neighbor in terms of all other categories. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/sent.JPG?raw=true"/>
+<img src=filled values something>
 
-Looking at the combined scores vs the top 5 subreddits these comments were scraped from, we can see certain communities are much more optimistic than others, with the options trading subreddit WallStreetBets having the highest combined sentiment score. 
+Now that we have computed our missing values, we can explore our data. The first step is to view the distribution of our data categories. Below are a few histograms of some randomly selected categories. As you can see from these plots, the data is fairly normally distributed, with outliers tending to be rightly skewed. This suggests standardization will be the best method for scaling our data when preparing it for our model. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/top5sent.jpg?raw=true"/>
+<img src=histogram plots>
 
-Now that we have our sentiment scores, the next step is to collect price data for APPL during our comment period. This data was downloaded from Yahoo Finance and contains open, close, high, low, and volume for each day in our time period. After uploading the data to our workbook, I merged this data with our sentiment data and calculated the difference between today' and tomorrow’s closing price. Once this difference was calculated, I created a Class label for each date, where 1 represents a raise in stock price and 0 represents a lowering of the stock price. 
+Next we will look at feature correlation. I have taken our data and seperated it into 3 randomly selected groups of 10. With these subsets we can create some heatmaps that show how correlated our categories are to each other. As you can see from these plots, there is a fair amount of correlation, with some categories reaching the 70%-80% level. As for correlation to our target category, we have low but non-null correlation on some categories and up to 25% on others, suggesting a model should do fairly well at predicting our target class. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/merged.JPG?raw=true"/>
-
-As we can see from the following scatterplot, there is a clear correlation between the opening price difference and class, while the sentiment score looks fairly even across each value when compared to the class label. 
-
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/sent_open.jpg?raw=True"/>
-
+<img src=heatmaps>
 
 ### 2. Model Training and Evaluation
 
-Now that the data has been organized and collected, it is time to see what correlation there is between these sentiment scores and the stock price. For the first model we will be using only the sentiment score vs the change in closing price. I chose K Nearest Neighbors for this model and collected the test error rate for k's 1-20 to determine the best number of neighbors to use for this data. As you can see, 5 appears to be the k value with the lowest error rate, so I set k=5 and tested the model against our data. 
+Now that the data has been organized and collected, it is time to train our model. Because we have a high number of categories with varying levels of correlation, I have decided to use XGBoost as our model, a series of boosted decission trees. Because our data is fairly normally distributed, I have scaled all of our categories using a standardization method, and converted our categorical column into dummy variables. Once the data is prepared, we can start to train our model. 
 
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/error_rate.png?raw=true"/>
 
-Using only the sentiment score, we get an overall accuracy of 54%. For trading, the most useful score would be the recall score of our 1 label, since the goal is to buy when there is a predicted rise in the stock’s price. Here we have a score of 55%.
+Using area under the curve (AUC) as our training metric, we can see that our model performs fairly well, with 99% on our training data and 93% on test data. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/k_sent_only.JPG?raw=true"/>
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/plot_sent.JPG?raw=true"/>
 
-The next step is be to combine these sentiment scores with other features available in our dataset to see if we can come up with a higher recall rate. To do this I added in the daily volume, as well as the opening price of the stock for the next trading day. Using K Nearest Neighbors with a k value of 30, I was able to raise the recall score for our 1 prediction to 65%. This is a much more useful score; however it requires you to wait until opening of the next day to place any trades, limiting potential profits. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/error_rate_all.jpg?raw=true"/>
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/class_report_all.JPG?raw=true"/>
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/plot_all_appl.JPG?raw=true"/>
 
-Finally, I tested a Random Forest model to see if there was an increase in accuracy.  By doing a grid search for the best parameters for our data, I ran a Random Forest algorithm with a max depth of 6 and set the number of estimators to 10. This led to a recall score of 63% for our 1 label, slightly worse than that of K Nearest Neighbors.
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/class_report_forest_friday.JPG?raw=true"/>
 
 In conclusion, although reddit sentiment does have a slightly better than 50% prediction rate on the movement of APPLE stock, it may be best to look for a different source for stock market trading advice. 
 
