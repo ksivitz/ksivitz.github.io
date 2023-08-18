@@ -20,8 +20,8 @@ Now that we have computed our missing values, we can explore our data. The first
 
 Next we will look at feature correlation. I have taken our data and seperated it into 3 randomly selected groups of 10. With these subsets we can create some heatmaps that show how correlated our categories are to each other. As you can see from these plots, there is a fair amount of correlation, with some categories reaching the 70%-80% level. As for correlation to our target category, we have low but non-null correlation on some categories and up to 25% on others, suggesting a model should do fairly well at predicting our target class. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/heatmaps.PNG?raw=true"/>
-
+<center><img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/heatmaps.PNG?raw=true"/></center>
+  
 ### 2. Model Training and Evaluation
 
 Now that the data has been organized and collected, it is time to train our model. Because we have a high number of categories with varying levels of correlation, I have decided to use XGBoost as our model, a series of boosted decission trees. Because our data is fairly normally distributed, I have scaled all of our categories using a standardization method, and converted our categorical column into dummy variables. Once the data is prepared, we can start to train our model. 
@@ -32,7 +32,7 @@ The first step is choosing hyperparameters for our model. I started by using sag
 
 Using area under the curve (AUC) as our training metric, we can see that our model performs fairly well, with 99% on our training data and 93% on test data. From the confusion matrix we can see our model performed very well, only miss-classifying 2 of the 23 positive instances. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/auc-curve-test.PNG?raw=true"/>
+<center><img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/auc-curve-test.PNG?raw=true"/></center>
 
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/confusion-test.PNG?raw=true"/>
 
