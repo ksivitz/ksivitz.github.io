@@ -38,7 +38,7 @@ Using area under the curve (AUC) as our training metric, we can see that our mod
 
 Finally, we will evaluate our model on the holdout (validation) set. As you can see there is a slight dropoff in performance, though our model still has an accruacy score of 88% and an AUC of 86%. From the confusion matrix we can see that we were able to correctly identify 82% (19 out of 23) positive instances.
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/auc-5.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/auc-5.PNG"/>
 
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/confusion-5.PNG?raw=true"/>
 
