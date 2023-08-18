@@ -8,8 +8,8 @@ The purpose of this project is to determine if a patient has one or more of thre
 
 For this project I will be using a dataset provided by Kaggle, an online coding competition website. Because the data is medical and contains personal information, all data is encoded and anonymized. For this reason all of our data exploration and feature engineering will be based solely on the numbers, and not involve any domain knowlege. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/icr-data.PNG?raw=true"/>
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/icr-data-2.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/2a346a620828f8646795d597f838a3c69e5cfcb7/images/icr-data-2.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/2a346a620828f8646795d597f838a3c69e5cfcb7/images/icr-data-2.PNG?raw=true"/>
 
 The first step in preparing this data looking for missing values. As we can see from the following chart, there are a few categories with one or two missing values, and one category (EL) with 60 missing values. because we have no knoweldge of what each category represents, I decided the best way to fill these missing values is with a KNN imputer. This program fills missing values with the value of their nearest neighbor in terms of all other categories. 
 
@@ -38,21 +38,21 @@ Using area under the curve (AUC) as our training metric, we can see that our mod
 
 Finally, we will evaluate our model on the holdout (validation) set. As you can see there is a slight dropoff in performance, though our model still has an accruacy score of 88% and an AUC of 86%. From the confusion matrix we can see that we were able to correctly identify 82% (19 out of 23) positive instances.
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/auc-5.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/2a346a620828f8646795d597f838a3c69e5cfcb7/images/auc-5.PNG?raw=true"/>
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/confusion-5.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/2a346a620828f8646795d597f838a3c69e5cfcb7/images/confusion-5.PNG?raw=true"/>
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/class-5.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/2a346a620828f8646795d597f838a3c69e5cfcb7/images/class-5.PNG?raw=true"/>
 
 Because the purpose of this project is to correctly identify positive instances of age related conditions in patients, our most important metric is the recall value for our 
 positive (1) class. XGBoost provides probabilities as its output, with values less that 0.50 resulting in a 0 classification and outcomes greater than 0.50 resulting in a 1 classification. By adjusting this threshold from 0.50 to 0.40, we can increase our likelyhood of identifing patients with a positive result from our test.  
 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/auc-4.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/2a346a620828f8646795d597f838a3c69e5cfcb7/images/auc-4.PNG?raw=true"/>
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/confusion-4.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/2a346a620828f8646795d597f838a3c69e5cfcb7/images/confusion-4.PNG?raw=true"/>
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/class-report-4.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/2a346a620828f8646795d597f838a3c69e5cfcb7/images/class-report-4.PNG?raw=true"/>
 
 
 As you can see, lowering this threshold allowed us to increase our percentage of correctly identified positive instances from 82% to 86%.
