@@ -42,7 +42,7 @@ Finally, we will evaluate our model on the holdout (validation) set. As you can 
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/class-5.PNG?raw=true"/>
 
 Because the purpose of this project is to correctly identify positive instances of age related conditions in patients, our most important metric is the recall value for our 
-positive (1) class. XGBoost provides probabilities as its output, with values less that 0.50 resulting in a 0 classification and outcomes greater than 0.50 resulting in a 1 classification. By adjusting this threshold from 0.50 to 0.40, we can increase our likelyhood of identifing patients with a positive result from our test. 
+positive (1) class. XGBoost provides probabilities as its output, with values less that 0.50 resulting in a 0 classification and outcomes greater than 0.50 resulting in a 1 classification. By adjusting this threshold from 0.50 to 0.40, we can increase our likelyhood of identifing patients with a positive result from our test.  
 
 
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/auc-4.PNG?raw=true"/>
