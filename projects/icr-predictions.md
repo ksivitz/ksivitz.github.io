@@ -8,6 +8,9 @@ The purpose of this project is to determine if a patient has one or more of thre
 
 For this project I will be using a dataset provided by Kaggle, an online coding competition website. Because the data is medical and contains personal information, all data is encoded and anonymized. For this reason all of our data exploration and feature engineering will be based solely on the numbers, and not involve any domain knowlege. 
 
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/icr-data.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/icr-data-2.PNG?raw=true"/>
+
 The first step in preparing this data looking for missing values. As we can see from the following chart, there are a few categories with one or two missing values, and one category (EL) with 60 missing values. because we have no knoweldge of what each category represents, I decided the best way to fill these missing values is with a KNN imputer. This program fills missing values with the value of their nearest neighbor in terms of all other categories. 
 
 
