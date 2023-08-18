@@ -30,13 +30,17 @@ Now that the data has been organized and collected, it is time to train our mode
 
 The first step is choosing hyperparameters for our model. I started by using sagemakers hyperparameter tuning to create a hyperparameter tuning job. The results gave us a model that performed very well, however it appeard to overfit to our training data. Because of this, I adjusted some of the hyperparameters to help reduce this overfitting. I increased the values of lambda and alpha (our regularization hyperparameters), and decressed the max depth from 50 to 45.
 
-Using area under the curve (AUC) as our training metric, we can see that our model performs fairly well, with 99% on our training data and 93% on test data. From the confusion matrix we can see our model performed very well, only miss-classifying 2 of the 23 positive instances. 
+Using area under the curve (AUC) as our training metric, we can see that our model performs fairly well, with 99.55% on our training data and 95.93% on test data. From the confusion matrix we can see our model performed very well, only miss-classifying 2 of the 23 positive instances. 
 
-<center><img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/auc-curve-test.PNG?raw=true"/></center>
+<center><img src="https://github.com/ksivitz/ksivitz.github.io/blob/4a99524cf92a1aef693c89d25198b9383202f736/images/auc-curve-test.PNG?raw=true"/></center>
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/3db595d655e66b1107688a878849afe7f9a05bf7/images/confusion-test.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/4a99524cf92a1aef693c89d25198b9383202f736/images/confusion-test.PNG?raw=true"/>
 
-Finally, we will evaluate our model on the holdout (validation) set. As you can see there is a slight dropoff in performance, though our model still has an accruacy score of 88% and an AUC of 86%. From the confusion matrix we can see that we were able to correctly identify 82% (19 out of 23) positive instances.
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/4a99524cf92a1aef693c89d25198b9383202f736/images/class-report-test.PNG?raw=true"/>
+
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/4a99524cf92a1aef693c89d25198b9383202f736/images/loss-test.PNG?raw=true"/>
+
+Finally, we will evaluate our model on the holdout (validation) set. As you can see there is a slight dropoff in performance, though our model still has an accruacy score of 89.5% and an AUC of 89%. From the confusion matrix we can see that we were able to correctly identify 87% (20 out of 23) positive instances.
 
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/979f251ddfe52e03b3ceeb089f6e44d581f66dd2/images/auc-5.PNG?raw=true"/>
 
@@ -55,7 +59,7 @@ positive (1) class. XGBoost provides probabilities as its output, with values le
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/979f251ddfe52e03b3ceeb089f6e44d581f66dd2/images/class-report-4.PNG?raw=true"/>
 
 
-As you can see, lowering this threshold allowed us to increase our percentage of correctly identified positive instances from 82% to 86%.
+As you can see, lowering this threshold allowed us to increase our percentage of correctly identified positive instances from 87% to 91%.
 
 
 
