@@ -90,26 +90,9 @@ model training results
 
 ## Evaluation
 
-Now that we have trained our model
+Now that we have trained our model and predicted our residuals, it is time to evaluate the models performance. 
 
-
-
-
-We can also see from the following pie chart that the largest share of purchases come from customers living in city type B, with only a quarter of purchases coming from customers in city type A.
-
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/Pie_city.jpg?raw=true"/>
-
-Finally, we will look at purchase amount by product. There are 3 distinct product categories, each with a range of individual products. As you can see from the following graphs, purchasing amount varies greatly by both product category and individual products. 
-
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/prod_purch.jpg?raw=true"/>
-
-### 2. Model Training and Evaluation 
-
-Now that we have explored our data, it is time to start predicting. Because we have a mix of both numerical and classification features, I have decided that a Random Forest Regression model is the best model to use in predicting customer purchasing habits. Using this model, we can get a prediction score of 68%, with a root mean squared error of $2,828. 
-
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/rand_test_friday.JPG?raw=True"/>
-
-Using this information, the company can determine which customers are most likely to make large black friday purchases, and create personalized promotions to draw these customers to their stores. 
+The first step in evaluation is looking at how well the model performed on our test data. Looking at the following graph, you can see that our predictions match fairly well with the residual data. our RMSE for our standardized residuals is .75569, or about .75 standard deviations. 
 
 
 Below is the notebook containing the full workup of this project
