@@ -7,7 +7,7 @@
 [<img src="images/guitar_piano_cropped.jpg?raw=true"/>](projects/music)
 
 ---
-[<center>Multi-Store Sales Forecasting </center>](projects/black_friday)
+[<center>Multi-Store Sales Forecasting </center>](projects/sales-forcasting)
 <br>
 [<img src="images/black_friday_cropped.jpg?raw=true"/>](projects/black_friday)
 
