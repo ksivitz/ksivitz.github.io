@@ -9,12 +9,12 @@
 ---
 [<center>Multi-Store Sales Forecasting </center>](projects/sales-forcasting)
 <br>
-[<img src="images/black_friday_cropped.jpg?raw=true"/>](projects/black_friday)
+[<img src="images/black_friday_cropped.jpg?raw=true"/>](projects/sales-forcasting)
 
 ---
 [<center>ICR - Identifying Age Related Conditions</center>](projects/icr-predictions)
 <br>
-[<img src="images/stock_better_cropped.jpg?raw=true"/>](projects/reddit_sentiment)
+[<img src="images/stock_better_cropped.jpg?raw=true"/>](projects/icr-predictions)
 
 
 
