@@ -95,6 +95,11 @@ Now that we have trained our model and predicted our residuals, it is time to ev
 
 The first step in evaluation is looking at how well the model performed on our test data. Looking at the following graph, you can see that our predictions match fairly well with the residual data. our RMSE for our standardized residuals is .75569, or about .75 standard deviations. 
 
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/35e0b03c7766f3005e2ea24740ca5bdd523bc0f4/images/sales/residuals-act-vs-pred.PNG?raw=true"/>
+
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/35e0b03c7766f3005e2ea24740ca5bdd523bc0f4/images/sales/rmse-predicted.PNG?raw=true"/>
+
+
 
 Below is the notebook containing the full workup of this project
 
