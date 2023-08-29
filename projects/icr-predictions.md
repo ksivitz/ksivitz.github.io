@@ -66,4 +66,4 @@ In conclusion, modeling can help identify patients who have one of these age-rel
 
 Below is the notebook containing the full workup of this project
 
-[Age Related Conditions Notebook](https://ksivitz.github.io/notebooks/ICR-XGBoost-Notebook.html)
+[Age Related Conditions Notebook](https://ksivitz.github.io/notebooks/ICR-XGBoost-Notebook-1.html)
