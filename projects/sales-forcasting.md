@@ -117,4 +117,4 @@ Finally, we will make our seasonality sales predictions and combine them with ou
 
 Below is the notebook containing the full workup of this project
 
-[Black Friday Purchase Predictions](https://ksivitz.github.io/notebooks/black_friday_notebook.html).
+[Time Series Forecasting](https://ksivitz.github.io/notebooks/black_friday_notebook.html).
