@@ -2,7 +2,7 @@
 
 ### Project description:
 
-For this project my focus was to create a model that can take an audio wav file of an instrument being played and identify what instrument it is and what note is being played on that instrument. The ideal application of this model would be to assist in creating sheet music from a recording. 
+The purpose of this project is to use machine learning to identify notes and instruments from audio files. This project could have a number of use cases, from seperating audio tracks by instrument to creating sheet music from a recorded song. 
 
 ### 1. The Data
 
