@@ -9,7 +9,7 @@
 ---
 [<center>Multi-Store Sales Forecasting </center>](projects/sales-forcasting)
 <br>
-[<img src="images/black_friday_cropped.jpg?raw=true"/>](projects/sales-forcasting)
+[<img src="images/supermarket-3.jpg?raw=true"/>](projects/sales-forcasting)
 
 ---
 [<center>ICR - Identifying Age Related Conditions</center>](projects/icr-predictions)
