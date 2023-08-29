@@ -70,7 +70,7 @@ Family (Product Category)
 
 Additionally, we will create lag features to help predict any trends found in our residuals.
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/35e0b03c7766f3005e2ea24740ca5bdd523bc0f4/images/sales/hyperparameters.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/2cd3b143328ff8dc274eb271458a265c80e73ee3/images/sales/x-test.PNG?raw=true"/>
 
 ## Prediction Part 3: Predicting Residual Data
 
@@ -88,7 +88,7 @@ Now that we have trained our model and predicted our residuals, it is time to ev
 
 The first step in evaluation is to see how well the model performed on our test data. Looking at the following graph, you can see that our predictions match well with the residual data. The RMSE for our standardized residuals is .75569, or roughly .75 standard deviations. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/35e0b03c7766f3005e2ea24740ca5bdd523bc0f4/images/sales/residuals-act-vs-pred.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/2cd3b143328ff8dc274eb271458a265c80e73ee3/images/sales/resid-vs-pred.PNG?raw=true"/>
 
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/b0fed4b9fcd784ad2d1522ebde19f04e10d02c04/images/sales/residual-rmse.PNG?raw=true"/>
 
@@ -117,4 +117,4 @@ Finally, we will make our seasonality sales predictions and combine them with ou
 
 Below is the notebook containing the full workup of this project
 
-[Time Series Forecasting](https://ksivitz.github.io/notebooks/forecasting-supermarket-sales.html).
+[Time Series Forecasting](https://ksivitz.github.io/notebooks/Forecasting-Supermarket-Sales.html).
