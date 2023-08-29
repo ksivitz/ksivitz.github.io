@@ -14,7 +14,7 @@
 ---
 [<center>ICR - Identifying Age Related Conditions</center>](projects/icr-predictions)
 <br>
-[<img src="images/heartbeat-graph.jpg?raw=true"/>](projects/icr-predictions)
+[<img src="images/heartbeat-graph.png?raw=true"/>](projects/icr-predictions)
 
 
 
