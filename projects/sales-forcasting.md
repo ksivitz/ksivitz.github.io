@@ -68,9 +68,9 @@ Earthquake (a large earthquake struck Ecuador on 4/16/2016, effecting store sale
 Store Number
 Family (Product Category)
 
-We will also be computing lag features for our data to help predict any trends found in our residuals. 
+Additionally, we will create lag features to help predict any trends found in our residuals.
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/35e0b03c7766f3005e2ea24740ca5bdd523bc0f4/images/sales/feature-training.PNG?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/35e0b03c7766f3005e2ea24740ca5bdd523bc0f4/images/sales/hyperparameters.PNG?raw=true"/>
 
 ## Prediction Part 3: Predicting Residual Data
 
