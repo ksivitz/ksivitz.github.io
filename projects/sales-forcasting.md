@@ -55,18 +55,18 @@ When we subtract our predicted sales values from the actual sales, we are left w
 
 For our second model we will be using XGBoost, a series of boosted decision trees, to make predictions on the remaining sales not picked up by our linear regression model. Before we do this however, we will be adding the following supplemental data to our dataset:
 
-Promotional Information
-Holidays (local, regional, and national)
-New Years Day
-Day of the Week
-Month of the Year
-Monthly Max Temperature
-Monthly Precipitation
-Current Price of Oil
-Payday (yes or no)
-Earthquake (a large earthquake struck Ecuador on 4/16/2016, effecting store sales for several weeks afterwards)
-Store Number
-Family (Product Category)
+Promotional Information<br>
+Holidays (local, regional, and national)<br>
+New Years Day<br>
+Day of the Week<br>
+Month of the Year<br>
+Monthly Max Temperature<br>
+Monthly Precipitation<br>
+Current Price of Oil<br>
+Payday (yes or no)<br>
+Earthquake (a large earthquake struck Ecuador on 4/16/2016, effecting store sales for several weeks afterwards)<br>
+Store Number<br>
+Family (Product Category)<br>
 
 Additionally, we will create lag features to help predict any trends found in our residuals.
 
