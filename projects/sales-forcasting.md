@@ -111,17 +111,16 @@ The final step in evaluating our hybrid model is to view its performance on our 
 
 For our previous evaluation, we used lag variables provided by our test data. However, because we do not have acutal lag values for any prediction dates beyond the first in our validation set, we will need to make predictions for the first date in our set (7-16-2017) and then use those predicted values as lags for the next date's predictions, and so on. The following plot shows our predictions vs actual residual values for our validation date range. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/b0fed4b9fcd784ad2d1522ebde19f04e10d02c04/images/sales/residuals-vs-predicted-val.PNG"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/12ad6def5a2ded8544c26ba25cfb12fe76a2068c/images/sales/residuals-vs-predicted-val.PNG"/>
 
 Because we used our predictions as lag features, their is a risk of componding errors as we move further into our validation dataset. The following plot shows how our predictions from our projected lags compares to predictions with actual lag variables. As you can see, our projected lag predictions begin to diverge after 9 days, however the RMSE for our projected vs actual lag predictions is insignificant.
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/721a058cbbde84f6d246c0a72df3792cb2add6bc/images/sales/resiudal-predictions-lags.PNG"/>
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/721a058cbbde84f6d246c0a72df3792cb2add6bc/images/sales/rmse-lags.PNG"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/12ad6def5a2ded8544c26ba25cfb12fe76a2068c/images/sales/resiudal-predictions-lags.PNG"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/12ad6def5a2ded8544c26ba25cfb12fe76a2068c/images/sales/rmse-lags.PNG"/>
 
 Finally, we will make our seasonallity sales predictions and combine them with our residual sales predictions. Again, because we use lag variables in our prediction input, we will need to either predict daily and add our predictions to our lag variables, or we can do a multi-step prediction, which will predict values for however many steps in the future specified. For this model, we will use multi-step predictions. Making these predictions and adding them to our residual predictions, we can achieve a RMSE of only $45,283 per day, or an error of roughly 7% (check this)
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/721a058cbbde84f6d246c0a72df3792cb2add6bc/images/sales/final-sales-predictions.PNG"/>
-
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/12ad6def5a2ded8544c26ba25cfb12fe76a2068c/images/sales/final-sales-predictions.PNG"/>
 
 Below is the notebook containing the full workup of this project
 
