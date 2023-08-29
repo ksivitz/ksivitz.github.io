@@ -11,7 +11,7 @@ For this project I will be using a dataset provided by Kaggle, an online coding 
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/2a346a620828f8646795d597f838a3c69e5cfcb7/images/icr-data.PNG?raw=true"/>
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/2a346a620828f8646795d597f838a3c69e5cfcb7/images/icr-data-2.PNG?raw=true"/>
 
-The first step in preparing this data looking for missing values. As we can see from the following chart, there are a few categories with one or two missing values, and one category (EL) with 60 missing values. because we have no knoweldge of what each category represents, I decided the best way to fill these missing values is with a KNN imputer. This program fills missing values with the value of their nearest neighbor in terms of all other categories. 
+The first step in preparing this data looking for missing values. As we can see from the following chart, there are a few categories with one or two missing values, and one category (EL) with 60 missing values. because we have no knoweldge of what each category represents, I decided the best way to fill these missing values is with a KNN imputer. This imputer fills missing values with the value of their nearest neighbor in terms of all other categories. 
 
 
 Now that we have computed our missing values, we can explore our data. The first step is to view the distribution of our data categories. Below are a few histograms of some randomly selected categories. As you can see from these plots, the data is fairly normally distributed, with outliers tending to be rightly skewed. This suggests standardization will be the best method for scaling our data when preparing it for our model. 
@@ -26,11 +26,11 @@ Next we will look at feature correlation. I have taken our data and seperated it
   
 ### 2. Model Training and Evaluation
 
-Now that the data has been organized and collected, it is time to train our model. Because we have a high number of categories with varying levels of correlation, I have decided to use XGBoost as our model, a series of boosted decission trees. Because our data is fairly normally distributed, I have scaled all of our categories using a standardization method, and converted our categorical column into dummy variables. Once the data is prepared, we can start to train our model. 
+Now that the data has been organized and collected, it is time to train our model. Because we have a high number of categories with varying levels of correlation, I have decided to use XGBoost, a series of boosted decission trees, as our model. Because the data is fairly normally distributed, I have scaled all of the categories using a standardization method, and converted the categorical column into dummy variables. Now that the data is prepared, we can start to train our model. 
 
 The first step is choosing hyperparameters for our model. I started by using sagemakers hyperparameter tuning to create a hyperparameter tuning job. The results gave us a model that performed very well, however it appeard to overfit to our training data. Because of this, I adjusted some of the hyperparameters to help reduce this overfitting. I increased the values of lambda and alpha (our regularization hyperparameters), and decressed the max depth from 50 to 45.
 
-Using area under the curve (AUC) as our training metric, we can see that our model performs fairly well, with 99.55% on our training data and 95.93% on test data. From the confusion matrix we can see our model performed very well, only miss-classifying 2 of the 23 positive instances. 
+Using area under the curve (AUC) as our training metric, we can see that our model performs very well, with 99.55% AUC on our training data and 95.93% AUC on our test data. From the confusion matrix we can see our model only mis-classified 2 of the 23 positive instances. 
 
 <center><img src="https://github.com/ksivitz/ksivitz.github.io/blob/4a99524cf92a1aef693c89d25198b9383202f736/images/auc-curve-test.PNG?raw=true"/></center>
 
