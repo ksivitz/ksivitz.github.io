@@ -28,7 +28,7 @@ Other features we can extract using Librosa are spectral values such as bandwidt
 
 When classifying by pitch, we can look at how the zero-crossing rate for our different samples relates to the spectral centroids, and then use Seaborn’s hue feature to show where the various pitches fall on this scatterplot. As you can see, lower values of the spectral centroid and zero-crossing rates relate to lower pitches, while high values tend to be related to higher pitched notes. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/cent_zero_cross_scatter.png?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/a1a8e6640404247abc4f0b07abb822b30f4fea7d/images/cent_zero_cross_scatter.png?raw=true"/>
 
 The following pair-plot shows how a selection of these features correlate with each other and with the pitch of each sample. We can see that pitch values are well grouped on our scatterplots, suggesting these features can provide a significant amount of insight into predicting pitch values.
 
@@ -57,9 +57,9 @@ Next, we will look at models for note classification. Because we are using the s
 ### Random Forest: Max Depth 25, N Estimators 150
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/rand_note_param.JPG?raw=true"/>
 
-Now that we are able to predict the notes and instrument of an audio file, we can use this information to plot notes and create sheet music from our audio samples. I created a simple plot to showcase how this might be done, with the horizontal lines representing lines on a sheet music staff. Combined with a note separating algorithm and a bit of front-end design, these models could be very useful in creating sheet music for a variety of songs and instruments!
+Now that we are able to predict the notes and instrument of an audio file, we can use this information to plot notes and create sheet music from our audio samples. I created a simple plot to showcase how this might be done using the music21 library and MuseScore, a sheet music editing software. Combined with a note separating algorithm, these models could be very useful in creating sheet music for a variety of songs and instruments!
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/staff.jpg?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/a1a8e6640404247abc4f0b07abb822b30f4fea7d/images/staff-2.PNG?raw=true"/>
 
 
 
