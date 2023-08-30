@@ -2,7 +2,7 @@
 
 ### Project description:
 
-The purpose of this project is to use machine learning to identify notes and instruments from audio files. This project could have a number of use cases, from seperating audio tracks by instrument to creating sheet music from a recorded song. 
+The purpose of this project is to use machine learning to identify notes and instruments from audio files. This project could have a number of use cases, from separating audio tracks by instrument to creating sheet music from a recorded song. 
 
 ### 1. The Data
 
@@ -30,7 +30,7 @@ When classifying by pitch, we can look at how the zero-crossing rate for our dif
 
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/cent_zero_cross_scatter.png?raw=true"/>
 
-The following pairplot shows how a selection of these features correlate with each other and with the pitch of each sample. We can see that pitch values are well grouped on our scatterplots, suggesting these features can provide a significant amount of insight into prediciting pitch values.
+The following pair-plot shows how a selection of these features correlate with each other and with the pitch of each sample. We can see that pitch values are well grouped on our scatterplots, suggesting these features can provide a significant amount of insight into predicting pitch values.
 
 <img src="https://github.com/ksivitz/ksivitz.github.io/blob/ac5fb72b9e3a5f8231bbf853efc46c81575ea28c/images/pairplot.png?raw=true"/>
 
