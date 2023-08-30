@@ -18,13 +18,13 @@ There are several quantifiable metrics we can pull from these audio files that c
 
 The most useful features we can extract from these audio files are the [Mel Frequency Cepstrum Coefficients](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum), a set of coefficients meant to mathematically describe an audio wave. As you can see from the following charts, these coefficients can vary widely by instrument, giving us good separation to work into our algorithm. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/mfcc3_inst.png?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ac5fb72b9e3a5f8231bbf853efc46c81575ea28c/images/mfcc3_inst.png?raw=true"/>
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/mfcc8_inst.png?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ac5fb72b9e3a5f8231bbf853efc46c81575ea28c/images/mfcc8_inst.png?raw=true"/>
 
 Other features we can extract using Librosa are spectral values such as bandwidths and centroids, as well as the [chroma values](https://en.wikipedia.org/wiki/Chroma_feature) for each clip. Each chroma value relates to one of the twelve pitch classes found in western music. The following chart shows the different spectral bandwidth ranges for the various instruments we are looking to classify and the variance between them. 
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/spec_band.png?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ac5fb72b9e3a5f8231bbf853efc46c81575ea28c/images/spec_band.png?raw=true"/>
 
 When classifying by pitch, we can look at how the zero-crossing rate for our different samples relates to the spectral centroids, and then use Seaborn’s hue feature to show where the various pitches fall on this scatterplot. As you can see, lower values of the spectral centroid and zero-crossing rates relate to lower pitches, while high values tend to be related to higher pitched notes. 
 
@@ -32,7 +32,7 @@ When classifying by pitch, we can look at how the zero-crossing rate for our dif
 
 The following pairplot shows how a selection of these features correlate with each other and with the pitch of each sample. We can see that pitch values are well grouped on our scatterplots, suggesting these features can provide a significant amount of insight into prediciting pitch values.
 
-<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ebc75764e30570dd709c10f43f48623710aaac96/images/pairplot.png?raw=true"/>
+<img src="https://github.com/ksivitz/ksivitz.github.io/blob/ac5fb72b9e3a5f8231bbf853efc46c81575ea28c/images/pairplot.png?raw=true"/>
 
 ### 2. Model Testing and Evaluation
 
