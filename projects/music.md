@@ -63,4 +63,4 @@ Now that we are able to predict the notes and instrument of an audio file, we ca
 
 Below is the notebook containing the full workup of this project
 
-[Note and Instrument Classification](https://ksivitz.github.io/notebooks/Note Classification Final-1.html)
+[Note and Instrument Classification](https://ksivitz.github.io/notebooks/Note-Classification-Final-1.html)
